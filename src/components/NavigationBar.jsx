@@ -26,7 +26,7 @@ const NavigationBar = () => {
                             <Link className="nav-link active px-4 py-2 rounded-pill bg-info text-dark fw-bold shadow border border-info hover-bg-light transition-all" aria-current="page" to="/">
                                 <i className="bi bi-plus-lg me-1"></i> Home
                             </Link>
-                            <Link className="nav-link px-3 py-2 text-white-50 fw-medium hover-text-info" to="/">
+                            <Link className="nav-link px-3 py-2 text-white-50 fw-medium hover-text-info" to="/add">
                                 Add Donors
                             </Link>
                             <Link className="nav-link px-3 py-2 text-white-50 fw-medium hover-text-info" to="/view">
