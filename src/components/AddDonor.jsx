@@ -4,17 +4,19 @@ import NavigationBar from './NavigationBar';
 
 const AddDonor = () => {
 
-    const [formData, setFormData] = useState({
-        donor_name: '',
-        age: '',
-        gender: '',
-        blood_group: '',
-        phone: '',
-        email: '',
-        city: '',
-        weight_kg: '',
-        last_donation_date: ''
-    });
+    const [formData, setFormData] = useState(
+        {
+            donor_name: '',
+            age: '',
+            gender: '',
+            blood_group: '',
+            phone: '',
+            email: '',
+            city: '',
+            weight_kg: '',
+            last_donation_date: ''
+        }
+    )
 
 
 
@@ -23,18 +25,19 @@ const AddDonor = () => {
     }
 
     const readValue = () => {
-        console.log(input)
+        console.log(formData)
 
-        axios.post("https://host-demo-app.onrender.com/api/add-course", formData).then(
+        axios.post("https://host-demo-app.onrender.com/api/add-donor", formData).then(
 
             (response) => (
                 console.log(response.data)
             )
 
-        ).catch(
-            (error) => (
-                console.error("Error Adding Course", error)
-            )
+        ).catch((error) => {
+            console.log(error.response?.data);
+            console.log(error.response?.status);
+            console.error(error);
+        }
         )
 
     }
@@ -83,6 +86,7 @@ const AddDonor = () => {
                                     onChange={inputHandler}
                                     required
                                 >
+                                    <option value="">Select Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Other">Other</option>
@@ -92,12 +96,13 @@ const AddDonor = () => {
 
                                 <label className='form-label'>Blood Group: </label>
                                 <select
-                                    className='form-control'
+                                    className="form-control"
                                     name="blood_group"
                                     value={formData.blood_group}
                                     onChange={inputHandler}
                                     required
                                 >
+                                    <option value="">Select Blood Group</option>
                                     <option value="A+">A+</option>
                                     <option value="A-">A-</option>
                                     <option value="B+">B+</option>
@@ -180,7 +185,7 @@ const AddDonor = () => {
 
 
         </div>
-    );
-};
+    )
+}
 
 export default AddDonor;
