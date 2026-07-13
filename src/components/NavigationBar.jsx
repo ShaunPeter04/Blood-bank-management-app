@@ -10,7 +10,7 @@ const NavigationBar = () => {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary border-opacity-25 sticky-top py-3 shadow-lg" style={{ backgroundColor: '#0f172a' }}>
                 <div className="container">
                     {/* Glowing Deep Sea Brand */}
-                    <a className="navbar-brand fw-bold text-uppercase tracking-widest text-white d-flex align-items-center" href="/">
+                    <a className="navbar-brand fw-bold text-uppercase tracking-widest text-red d-flex align-items-center" href="/">
                         <i className="bi bi-compass text-info me-2 fs-4"></i>
                         <span>Blood Bank <span className="text-info fw-light">Management</span></span>
                     </a>
