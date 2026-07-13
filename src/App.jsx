@@ -6,6 +6,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavigationBar from './components/NavigationBar'
 import AddDonor from './components/AddDonor'
+import ViewDonors from './components/ViewDonors'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<AddDonor />} />
+          <Route path='/view' element={<ViewDonors />} />
+
         </Routes>
       </BrowserRouter>
 
